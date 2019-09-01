@@ -1,4 +1,4 @@
-# LINE stickers 
+# line-dl for downloading LINE stickers 
 
 ![](https://stickershop.line-scdn.net/stickershop/v1/sticker/222551965/android/sticker.png)
 
@@ -15,14 +15,14 @@ npm i -g https://github.com/suchipi/node-apng2gif ;: for converting apng to gif
 
 ## Installation
 ```sh
-pip install -e git+https://github.com/fuyutarow/line-stickers#egg=line
+pip install -e "git+https://gitlab.sairilab.com/sairilab/line-dl#egg=line-dl"
 ```
 
 ## Usage
 
 target: https://store.line.me/stickershop/product/8751482/ja
 ```sh
-line -o mystickers "https://store.line.me/stickershop/product/8751482/ja"
+line-dl -o mystickers "https://store.line.me/stickershop/product/8751482/ja"
 ```
 
 :warning: Quote url. "${url}"
@@ -69,7 +69,7 @@ Let's name local GoogleDrive directory `~/Gdrive` and
 use [Backup and Sync](https://www.google.com/drive/download/backup-and-sync/).
 
 ```sh
-alias line="line -o ~/Gdrive/stickers"
+alias line-dl="line-dl -o ~/Gdrive/stickers"
 ln -s ~/Gdrive/stickers ~/Gdrive/スタンプ🥺
 ```
 and add ` ~/Gdrive/スタンプ🥺` to sidebar of Finder.

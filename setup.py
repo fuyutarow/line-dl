@@ -1,15 +1,15 @@
 from setuptools import setup
 
 setup(
-    name="line",
-    version="2019.8.30",
+    name="line-dl",
+    version="2019.8.32",
     description='get LINE stickers',
     license='MIT',
     author='FUKUDA Yutaro',
-    url='https://github.com/fuyutarow/line-stickers',
+    url='https://gitlab.sairilab.com/sairilab/line-dl',
     entry_points={
         "console_scripts": [
-            "line = src.__main__:main",
+            "line-dl = src.__main__:main",
         ],
     },
     scripts=[
