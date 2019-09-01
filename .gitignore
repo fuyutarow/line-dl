@@ -1,0 +1,7 @@
+src/line
+*/stickers
+*.png
+
+.venv
+*/__pycache__
+*.egg-info
