@@ -18,8 +18,8 @@ npm i -g https://github.com/suchipi/node-apng2gif ;: for converting apng to gif
 pip install -e "git+https://gitlab.sairilab.com/sairilab/line-dl#egg=line-dl"
 ```
 
-## Usage
 
+## Usage
 target: https://store.line.me/stickershop/product/8751482/ja
 ```sh
 line-dl -o mystickers "https://store.line.me/stickershop/product/8751482/ja"
