@@ -15,7 +15,7 @@ def main():
     parser = argparse.ArgumentParser(description='count files')
     parser.add_argument(
         'target_url',
-        help="required https://store.line.me/stickershop/product/*******")
+        help="LINE sticker URL. e.g. https://store.line.me/stickershop/product/*******")
     parser.add_argument("-o",
                         "--out",
                         default="stickers",
@@ -104,16 +104,21 @@ def main():
 
     save_data(imgurl_list, "png")
 
-    if args.skip_convert: return
+    if args.skip_convert:
+        return
+    else:
+        print("[INFO] start convert.")
 
+
+    # `convert-soundanime`, `convert-sound` and `convert-anime` are installed by setup.py
     if is_sound and is_anime:
-        cmd = ["bash", "scripts/convert-soundanime.sh", f"{dirpath}"]
+        cmd = ["convert-soundanime", f"{dirpath}"]
 
     elif is_sound:
-        cmd = ["bash", "scripts/convert-sound.sh", f"{dirpath}"]
+        cmd = ["convert-sound", f"{dirpath}"]
 
     elif is_anime:
-        cmd = ["bash", "scripts/convert-anime.sh", f"{dirpath}"]
+        cmd = ["convert-anime", f"{dirpath}"]
 
     else:
         return

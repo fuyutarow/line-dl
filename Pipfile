@@ -15,8 +15,8 @@ requests = "*"
 python_version = "3.7"
 
 [scripts]
-get = "python src/__main__.py"
+main = "python src/__main__.py"
 lint = "yapf -ir --exclude '.venv' ./"
-"convert:anime" = "bash scripts/convert-anime.sh" #<dir_anime_stickers>
-"convert:sound" = "bash scripts/convert-sound.sh" #<dir_sound_stickers>
-"convert:soundanime" = "bash scripts/convert-soundanime.sh" #<dir_soundanime_stickers>
+"convert:anime" = "bash bin/convert-anime" #<dir_anime_stickers>
+"convert:sound" = "bash bin/convert-sound" #<dir_sound_stickers>
+"convert:soundanime" = "bash bin/convert-soundanime" #<dir_soundanime_stickers>

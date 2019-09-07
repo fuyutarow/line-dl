@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name="line-dl",
-    version="2019.9.07",
+    version="2019.9.08",
     description='get LINE stickers',
     license='MIT',
     author='FUKUDA Yutaro',
@@ -12,13 +12,13 @@ setup(
             "line-dl = src.__main__:main",
         ],
     },
-    scripts=[
-        'scripts/convert-sound.sh',
-        'scripts/convert-anime.sh',
-        'scripts/convert-soundanime.sh',
-    ],
     install_requires=[
         'requests',
         'requests-html',
+    ],
+    scripts=[
+        'bin/convert-sound',
+        'bin/convert-anime',
+        'bin/convert-soundanime',
     ],
 )
