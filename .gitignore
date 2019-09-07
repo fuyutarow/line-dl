@@ -1,5 +1,5 @@
 src/line-dl
-*/stickers
+stickers/
 *.png
 
 .venv

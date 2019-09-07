@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name="line-dl",
-    version="2019.8.32",
+    version="2019.9.07",
     description='get LINE stickers',
     license='MIT',
     author='FUKUDA Yutaro',

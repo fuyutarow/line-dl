@@ -4,13 +4,12 @@
 
 
 ## Requirements
-- Python 3.5+
+- Python 3.6+
 - ffmpeg (required for converting apng to gif)
-- Node.js (required for converting png and m4a to mp4)
+- apng2gif (required for converting png and m4a to mp4)
 
 ```sh
-brew install ffmpeg ;: for converting png and m4a to mp4
-npm i -g https://github.com/suchipi/node-apng2gif ;: for converting apng to gif
+brew install ffmpeg apng2gif
 ```
 
 ## Installation
@@ -18,13 +17,11 @@ npm i -g https://github.com/suchipi/node-apng2gif ;: for converting apng to gif
 pip install -e "git+https://gitlab.sairilab.com/sairilab/line-dl#egg=line-dl"
 ```
 
-
 ## Usage
 target: https://store.line.me/stickershop/product/8751482/ja
 ```sh
 line-dl -o mystickers "https://store.line.me/stickershop/product/8751482/ja"
 ```
-
 :warning: Quote url. "${url}"
 
 
@@ -37,7 +34,7 @@ line-dl -o mystickers "https://store.line.me/stickershop/product/8751482/ja"
 
 ## Project setup
 ```sh
-brew install pipenv
+brew install pyenv pipenv ;: for Python
 pipenv install --dev
 ```
 

@@ -1,4 +1,5 @@
 #!/bin/bash
+echo [INFO] run scripts/convert-anime.sh
 
 targetDir=${1}
 if [ -z ${targetDir} ]; then
@@ -6,9 +7,15 @@ if [ -z ${targetDir} ]; then
     exit
 fi
 
-cp scripts/apng2gif.js "${targetDir}"
 pushd "${targetDir}"
-echo $(pwd)
-node apng2gif.js
-rm apng2gif.js
+echo [INFO] now on $(pwd)
+
+for file in *.png; do
+    apng2gif $file
+    gif=${file/.png/.gif/}
+    if [ -f $gif ]; then
+        echo [INFO] save $dif
+    fi
+done
+
 popd

@@ -1,5 +1,5 @@
 #!/bin/bash
-echo [INFO] from scripts/convert-soundanime.sh
+echo [INFO] run scripts/convert-soundanime.sh
 
 targetDir=${1}
 if [ -z ${targetDir} ]; then
@@ -7,11 +7,16 @@ if [ -z ${targetDir} ]; then
     exit
 fi
 
-cp scripts/apng2gif.js "${targetDir}"
 pushd "${targetDir}"
-echo $(pwd)
-node apng2gif.js
-rm apng2gif.js
+echo [INFO] now on $(pwd)
+
+for file in *.png; do
+    apng2gif $file
+    gif=${file/.png/.gif/}
+    if [ -f $gif ]; then
+        echo [INFO] save $dif
+    fi
+done
 
 for i in $(seq -w 99); do
     if [ -f ${i}.m4a ]; then
@@ -20,7 +25,7 @@ for i in $(seq -w 99); do
         rm ${i}_nosound.mp4
     fi
     if [ -f ${i}.mp4 ]; then
-        echo ${i}.mp4
+        echo [INFO] save ${i}.mp4
     fi
 done
 
