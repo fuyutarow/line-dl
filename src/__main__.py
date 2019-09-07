@@ -13,7 +13,7 @@ def main():
         help="required https://store.line.me/stickershop/product/*******")
     parser.add_argument("-o",
                         "--out",
-                        default="stikers",
+                        default="stickers",
                         help="output dirctory")
     parser.add_argument("--skip-get",
                         action='store_true',
