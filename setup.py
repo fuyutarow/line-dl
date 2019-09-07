@@ -16,7 +16,6 @@ setup(
         'scripts/convert-sound.sh',
         'scripts/convert-anime.sh',
         'scripts/convert-soundanime.sh',
-        'scripts/apng2gif.js',
     ],
     install_requires=[
         'requests',
