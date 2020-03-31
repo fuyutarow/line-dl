@@ -15,7 +15,9 @@ def main():
     parser = argparse.ArgumentParser(description='count files')
     parser.add_argument(
         'target_url',
-        help="LINE sticker URL. e.g. https://store.line.me/stickershop/product/*******")
+        help=
+        "LINE sticker URL. e.g. https://store.line.me/stickershop/product/*******"
+    )
     parser.add_argument("-o",
                         "--out",
                         default="stickers",
@@ -36,9 +38,11 @@ def main():
     dirpath.mkdir(parents=True, exist_ok=True)
 
     def get_imgurl_list(r):
-        span_list = r.html.find(".FnCustomBase")
+        #  span_list = r.html.find(".FnCustomBase")
+        span_list = r.html.find(".mdCMN09Image")
         get_imgurl = lambda span:\
             span.attrs["style"].split("(")[1].split(";")[0]
+        print(span_list)
         url_list = [get_imgurl(span) for span in span_list]
         return url_list
 
@@ -46,6 +50,7 @@ def main():
         if args.skip_get: return
 
         print(f"[INFO] save dirctory: {dirpath}")
+        print(url_list)
         for i, url in enumerate(url_list):
             r = requests.get(url)
 
@@ -108,7 +113,6 @@ def main():
         return
     else:
         print("[INFO] start convert.")
-
 
     # `convert-soundanime`, `convert-sound` and `convert-anime` are installed by setup.py
     if is_sound and is_anime:
